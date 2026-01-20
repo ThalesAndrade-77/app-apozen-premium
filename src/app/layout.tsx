@@ -5,7 +5,6 @@ import Script from "next/script";
 import "./globals.css";
 // Import all available fonts for AI usage
 import "../lib/fonts";
-import Navbar from "@/components/custom/navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,8 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Aposentauto - Planeje seu Futuro",
-  description: "Planejamento inteligente de aposentadoria com design premium",
+  title: "Aposentauto - Planeje a Aposentadoria dos Seus Sonhos",
+  description: "Transforme seu futuro com o Aposentauto. Planejamento personalizado, orientação completa e segurança para sua aposentadoria.",
 };
 
 export default function RootLayout({
@@ -33,12 +32,9 @@ export default function RootLayout({
         <Script src="/lasy-bridge.js" strategy="beforeInteractive" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0D0D0D] text-white font-inter`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar />
-        <main className="pt-20 pb-24 md:pb-8 min-h-screen">
-          {children}
-        </main>
+        {children}
       </body>
     </html>
   );
